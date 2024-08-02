@@ -1,6 +1,5 @@
-import React, { FC } from "react";
 import { TextField } from "@mui/material";
-import { useState } from "react";
+import React, { FC, useState } from "react";
 
 interface TodoInputProps {
   addTodoHandler: (text: string) => void;
@@ -18,6 +17,7 @@ const TodoInput: FC<TodoInputProps> = ({ addTodoHandler }) => {
 
   return (
     <TextField
+      fullWidth
       label="Todo"
       variant="outlined"
       value={todo}
