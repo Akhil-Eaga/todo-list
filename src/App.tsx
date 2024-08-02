@@ -1,7 +1,9 @@
+import { Container } from "@mui/material";
 import { useLocalStorage } from "@uidotdev/usehooks";
 import TodoInput from "./components/TodoInput";
+import TodoList from "./components/TodoList";
 
-interface Todo {
+export interface Todo {
   id: number;
   description: string;
 }
@@ -14,7 +16,12 @@ const App = () => {
     setTodos([...todos, todo]);
   };
 
-  return <TodoInput addTodoHandler={addTodo} />;
+  return (
+    <Container maxWidth="md">
+      <TodoInput addTodoHandler={addTodo} />
+      <TodoList todos={todos} />
+    </Container>
+  );
 };
 
 export default App;
